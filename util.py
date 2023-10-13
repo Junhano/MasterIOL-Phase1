@@ -203,9 +203,9 @@ def read_config(config):
 
     config_dict["run_group"] = config["Run_group"]
     config_dict["model_name"] = config["Model_name"]
-    config_dict["learning_rate"] = float(config["LearningRate"]) if "LearningRate" in config else 3e-4
+    config_dict["learning_rate"] = float(config["Learning_rate"]) if "Learning_rate" in config else 3e-4
     config_dict["flipping"] = config.getboolean("Flipping") if "Flipping" in config else True
-    config_dict["num_run"] = int(config["Num_run"]) if "Num_run" in config else 15
+    config_dict["num_run"] = int(config["Num_runs"]) if "Num_runs" in config else 15
     config_dict["masking"] = config["Masking"].split(",") if "Masking" in config else []
     config_dict["roc"] = config.getboolean("ROC") if "ROC" in config else False
     config_dict["draw"] = config.getboolean("Draw") if "Draw" in config else False
