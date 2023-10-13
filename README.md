@@ -20,16 +20,16 @@ To use this repository, follow these steps:
 
 ## Configuration Parameters
 
-- **Run Group:**
+- **Run_group:**
   Used for organizing the ROC experiment. Models belonging to the same run group will be plotted in the same ROC plot.
 
-- **Learning Rate:**
+- **Learning_rate:**
   Learning rate for the machine learning model during training.
 
 - **Flipping:**
   Controls whether to flip the image to align the nasal and temporal sides.
 
-- **Num Runs:**
+- **Num_runs:**
   Number of runs for cross-fold validation in the experiment.
 
 - **ROC:**
@@ -41,7 +41,7 @@ To use this repository, follow these steps:
 - **Epochs:**
   Controls the number of training epochs to run.
 
-- **Model Name:**
+- **Model_name:**
   Unique identifier model name for stored plots.
 
 - **Model:**
@@ -49,9 +49,6 @@ To use this repository, follow these steps:
 
 - **Masking:**
   Specifies the area to be masked for ablation study.
-
-- **Channel:**
-  The specification for the number of channels in the input image is automatically generated if not explicitly provided. Manual input of this value is discouraged.
 
 Ensure you customize the configuration parameters according to your specific use case and experimental requirements.
 
