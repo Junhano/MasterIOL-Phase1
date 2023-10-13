@@ -210,7 +210,6 @@ def read_config(config):
     config_dict["roc"] = config.getboolean("ROC") if "ROC" in config else False
     config_dict["draw"] = config.getboolean("Draw") if "Draw" in config else False
     config_dict["epochs"] = int(config["Epochs"]) if "Epochs" in config else 10
-    config_dict["disable"] = config.getboolean("Disable") if "Disable" in config else False
 
     if "Save_path" in config:
         config_dict["save_path"] = config["Save_path"]
@@ -249,12 +248,12 @@ def generate_train_configs(configpath = 'config.ini'):
 
     for section in config.sections():
         config_dict = read_config(config[section])
-        if not config_dict["disable"]:
-            run_group = config_dict["run_group"]
-            if run_group in train_config_run_group_dict:
-                train_config_run_group[train_config_run_group_dict[run_group]].append(config_dict)
-            else:
-                train_config_run_group.append([])
-                train_config_run_group[-1].append(config_dict)
-                train_config_run_group_dict[run_group] = len(train_config_run_group) - 1
+
+        run_group = config_dict["run_group"]
+        if run_group in train_config_run_group_dict:
+            train_config_run_group[train_config_run_group_dict[run_group]].append(config_dict)
+        else:
+            train_config_run_group.append([])
+            train_config_run_group[-1].append(config_dict)
+            train_config_run_group_dict[run_group] = len(train_config_run_group) - 1
     return train_config_run_group
